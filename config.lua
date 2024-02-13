@@ -46,28 +46,28 @@ Config.BlipRouteColour = 15
 
 
 -- Rewards Configuration
-Config.AccountMoney = 'cash' 				-- How you want the job completion to be paid.
+Config.AccountMoney = 'bank' 				-- How you want the job completion to be paid.
 
 -- Usable Item Config
 Config.ScubaItemName = 'diving_gear'		-- Name of scuba gear item to put on/take off scuba gear
 
 -- General Configuration
-Config.UsePlayerJob = false					-- If true requires the player to have the appropriate job; job uses and names identified next
-Config.VehicleSteward = true				-- If true, will not let the player do any more jobs if they have returned a destroyed vehicle (they will need to relog to reset this)
+Config.UsePlayerJob = true					-- If true requires the player to have the appropriate job; job uses and names identified next
+Config.VehicleSteward = false				-- If true, will not let the player do any more jobs if they have returned a destroyed vehicle (they will need to relog to reset this)
 Config.BusJobOn = true						-- If true allows the bus job
-Config.BusJobName = 'bus-driver'			-- Name of the bus job, used if Config.UsePlayerJob = true
+Config.BusJobName = 'busdriver'				-- Name of the bus job, used if Config.UsePlayerJob = true
 Config.ForkliftJobOn = true					-- If true allows the forklift job
-Config.ForkliftJobName = 'forklift-driver'	-- Name of the forklift job, used if Config.UsePlayerJob = true
+Config.ForkliftJobName = 'forkliftdriver'	-- Name of the forklift job, used if Config.UsePlayerJob = true
 Config.TaxiJobOn = true						-- If true allows the taxi job
-Config.TaxiJobName = 'taxi-driver'			-- Name of the taxi job, used if Config.UsePlayerJob = true
+Config.TaxiJobName = 'taxidriver'			-- Name of the taxi job, used if Config.UsePlayerJob = true
 Config.ScubaJobOn = true					-- If true allows the scuba job
-Config.ScubaJobName = 'scuba-diver'			-- Name of the scuba job, used if Config.UsePlayerJob = true
+Config.ScubaJobName = 'scubadiver'			-- Name of the scuba job, used if Config.UsePlayerJob = true
 Config.JetSkiJobOn = true					-- If true allows the JetSKi job
 Config.JetSkiJobName = 'lifeguard'			-- Name of the JetSKi job, used if Config.UsePlayerJob = true
 Config.HeliJobOn = true						-- If true allows the Heli job
-Config.HeliJobName = 'heli-driver'			-- Name of the Heli job, used if Config.UsePlayerJob = true
+Config.HeliJobName = 'helidriver'			-- Name of the Heli job, used if Config.UsePlayerJob = true
 Config.GarbageJobOn = true					-- If true allows the Garbage job
-Config.GarbageJobName = 'garbage-driver'	-- Name of the Garbage job, used if Config.UsePlayerJob = true
+Config.GarbageJobName = 'garbagedriver'		-- Name of the Garbage job, used if Config.UsePlayerJob = true
 
 
 -- Vehicle Keys and Fuel; set the below event to give the player keys and fuel for the vehicle (if applicable)
@@ -75,7 +75,7 @@ RegisterNetEvent('angelicxs-CivilianJobs:VehicleInitation')
 AddEventHandler('angelicxs-CivilianJobs:VehicleInitation', function(vehicle)
 	-- Example provided:
 	TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(vehicle))
-    exports["ps-fuel"]:SetFuel(vehicle, 99)
+    exports["LegacyFuel"]:SetFuel(vehicle, 99)
 end)
 
 -- Language Configuration
